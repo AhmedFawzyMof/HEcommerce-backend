@@ -19,7 +19,6 @@ class ProductArSerializer(serializers.ModelSerializer):
         queryset = Color.objects.all(),
         slug_field='name',
     )
-    image_url = serializers.SerializerMethodField('get_image_url')
 
 
     class Meta:
@@ -37,11 +36,8 @@ class ProductArSerializer(serializers.ModelSerializer):
             "descriptionAr",
             "price",
             'image',
-            "image_url",
         )
 
-    def get_image_url(self, obj):
-        return obj.image.url
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -62,7 +58,6 @@ class ProductSerializer(serializers.ModelSerializer):
         queryset = Color.objects.all(),
         slug_field='name',
     )
-    image_url = serializers.SerializerMethodField('get_image_url')
 
 
     class Meta:
@@ -80,11 +75,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "descriptionAr",
             "price",
             'image',
-            "image_url",
         )
-
-    def get_image_url(self, obj):
-        return obj.image.url
 
 class TagSerializer(serializers.ModelSerializer):
     products = ProductSerializer(many=True)

@@ -59,7 +59,8 @@ INSTALLED_APPS = [
 
 
 CORS_ALLOWED_ORIGINS = [ 
-    "https://h-ecommerce-vue.vercel.app"
+    #"https://h-ecommerce-vue.vercel.app"
+    "http://localhost:8080"
 ]
 
 
